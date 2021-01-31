@@ -1,0 +1,40 @@
+weight = 0;
+def ground_shipping(weight):
+  if weight <= 2:
+    return (weight * 1.5) + 20
+  elif weight > 2 and weight <= 6:
+    return (weight * 3) + 20
+  elif weight > 6 and weight <= 10:
+    return (weight * 4) + 20
+  elif weight > 10:
+    return (weight * 4.75) + 20
+def drone_shipping(weight):
+  if weight <= 2:
+    return weight * 4.5
+  elif weight <= 6:
+    return weight * 9
+  elif weight <= 10:
+    return weight * 12
+  elif weight > 10:
+    return weight * 14.25
+
+def compare(weight):
+
+  ground_pre = 125
+  ground_std= ground_shipping(weight)
+  drone_std= drone_shipping(weight)
+
+  print("ground pre = $" + str(ground_pre))
+  print('ground std = $' + str(ground_std))
+  print('drone = $' + str(drone_std))
+
+  if ground_std > 125 and drone_std > 125:
+    return 'ground premium is the cheapest'
+  elif ground_std < drone_std:
+    return 'ground standard is the cheapest'
+  elif drone_std < ground_std:
+    return 'drone standard is the cheapest'
+  else:
+    return 'They are all the same price'
+weight = 41.5
+print(compare(weight))
