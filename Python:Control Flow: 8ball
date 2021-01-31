@@ -1,0 +1,30 @@
+import random as rd
+
+name = 'Andrew'
+question = 'Can I learn to code?'
+answer = ''
+rnumber= rd.randrange(1,10)
+
+def eball(number):
+  if number == 1:
+    return 'Yes - definitely.'
+  elif number == 2:
+    return 'It is decidely so.'
+  elif number == 3:
+    return 'Without a doubt'
+  elif number == 4:
+    return 'Reply hazy, try again.'
+  elif number == 5:
+    return 'Ask again later.'
+  elif number == 6:
+    return 'Better not tell you now.'
+  elif number == 7:
+    return 'My sources say no.'
+  elif number == 8:
+    return 'Outlook not so good.'
+  elif number == 9:
+    return 'Very doubtful.'
+  else:
+    raise Exception('Not between 1 - 9')
+
+print(eball(rnumber))
